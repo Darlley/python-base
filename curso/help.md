@@ -1,5 +1,17 @@
 hep() mostra detalhes do metodo
 
+## TIPOS PRIMITIVOS
+
+1. int - tipo não iterável. Exemplo: 42
+2. float - tipo não iterável. Exemplo: 3.14
+3. str - tipo iterável. Exemplo: "texto"
+4. bool - tipo não iterável. Exemplo: True
+5. tuple - tipo imutável iterável. Exemplo: ("valor1", "valor2") 
+6. list - tipo mutável iterável. Exemplo: ["item1", "item2"]
+7. set - tipo mutável iterável. Exemplo: {1, 2, 3} ou set({1, 2, 3})
+8. dict - tipo mutável iterável. Exemplo: {"chave": "valor"} ou dict({"chave": "valor"})
+9. None - tipo não iterável. Exemplo: None
+
 ## SET E CONJUNTOS
 
 - set()
@@ -12,3 +24,21 @@ hep() mostra detalhes do metodo
 - >= (superconjunto): verifica se um conjunto contém outro: conjunto_x >= conjunto_y
 - set().add(valor)
 - Hash Table: Estrutura de dados que otimiza buscas. Enquanto a busca em arrays (value in array) tem complexidade O(n) pois precisa iterar toda a lista, o set implementa uma hash table com complexidade O(1), acessando diretamente o endereço de memória.
+
+## Dicionário
+
+- dict({ key: value }) ou simplesmente { key: value }
+- exemplos: 
+  { "key": "value" }
+  { "key": 123 }
+  { 0: 123 }
+  { 0: "value" }
+- Percorrer uma tupla ou array é O(n) mas o dicionário é O(1)
+- da para usar ("value" in dicionario) para retornar um booleano
+- acessa o valor diretamente usando variavel["chave"]
+- união de dicionarios: 
+  1. dicionario.upadate(outro_dicionario)
+  2. { **dicionario, **outro_dicionario }
+- acessar valores:
+  1. dicionario["chave"]
+  2. dicionario.get("chave") se não tiver passa um valor default como segundo parametro.
