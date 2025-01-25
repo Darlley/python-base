@@ -28,10 +28,11 @@ import os
 
 current_language = os.getenv("LANG")[:5]
 
-msg = "olá mundo"
+msg = dict({
+  "en_US": "Hello, World!",
+  "pt_BR": "Olá, mundo!"
+})
 
-if current_language == "en_US":
-  msg = "hello world"
   
-print(msg.upper()) # Imprime uma palavra em maisucula
+print(msg[current_language]) # Imprime uma palavra em maisucula
 
