@@ -25,14 +25,30 @@ __author__ = "Darlley"
 __license__ = "Unlicense"
 
 import os
+import sys
 
-current_language = os.getenv("LANG")[:5]
+arguments = {
+  "lang": None,
+  "count": 1
+}
+
+for arg in sys.argv[1:]:
+  # TODO: tratar ValueErro (quando não tem nada)
+  key, value = arg.split("=")
+  key = key.lstrip("-").strip()
+  value = value.strip()
+  if key not in arguments:
+    print(f"Ivalid option argument{arg}")
+    sys.exit()
+  arguments[key] = value
+
+current_language = arguments['lang']
+if current_language is None:
+  current_language = os.getenv("LANG", "en_US")[:5]
 
 msg = dict({
   "en_US": "Hello, World!",
   "pt_BR": "Olá, mundo!"
 })
 
-  
-print(msg[current_language]) # Imprime uma palavra em maisucula
-
+print(f"{arguments["count"]}x: {msg[current_language] * int(arguments["count"])}")

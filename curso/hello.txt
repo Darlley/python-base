@@ -1,0 +1,2 @@
+1. print("example", file=open("hello.txt", "a"))
+2. tail -f hello.txt

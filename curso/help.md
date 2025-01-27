@@ -42,3 +42,21 @@ hep() mostra detalhes do metodo
 - acessar valores:
   1. dicionario["chave"]
   2. dicionario.get("chave") se não tiver passa um valor default como segundo parametro.
+
+## SYS MÓDULO DE MÉTODO DO SISTEMA DE I/O (print e input)
+
+- import sys
+- dir(sys) para ver todos os metodos
+- sys.platform mostra o SO do usuário
+type(sys.stdou) = IO
+- sys.stdout é um objeto IO, espera um texto e se comporta como um arquivo
+  - sys.stdout.write() é o método abstraido de print()
+  - print("example", file=open("hello.txt", "a")) Abre o arquivo e faz append do conteúdo.~
+    - tail -f hello.txt para ficar monitorando o novo arquivo
+- sys.stdin é um objeto IO, le um texto
+  - sys.stdin.read() é o método abstraido de input()
+  - raramente se usa o input (jogos de terminal, softwares dedicado, testes)
+- sys.argv recupera os argumentos do terminal
+  - python hello.py --lang="PT_BR"            retorna ['hello.py', '--lang=PT_BR']
+
+env | grep 
