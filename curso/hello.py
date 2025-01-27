@@ -44,7 +44,12 @@ for arg in sys.argv[1:]:
 
 current_language = arguments['lang']
 if current_language is None:
-  current_language = os.getenv("LANG", "en_US")[:5]
+  if "LANG" is os.environ:
+    current_language = os.getenv("LANG")
+  else:
+    current_language = input("Choose a language: ")
+
+current_language = current_language[:5] 
 
 msg = dict({
   "en_US": "Hello, World!",
