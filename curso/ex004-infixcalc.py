@@ -31,6 +31,7 @@ __version__ = "0.1.0"
 
 import os
 import sys
+from datetime import datetime
 
 arguments = sys.argv[1:]
 
@@ -84,8 +85,10 @@ elif operation == "div":
 
 path = os.curdir
 filepath = os.path.join(path, "infixcalc.log")
+timestamp = datetime.now().isoformat()
+user = os.getenv("USERNAME", 'anonymous')
 
 with open(filepath, "a") as file_:
-  file_.write(f"{n1}{'+' if operation == 'sum' else '-' if operation == 'sub' else '*' if operation == 'mul' else '/'}{n2} = {result} \n")
+  file_.write(f"{user} - {timestamp} > {n1}{'+' if operation == 'sum' else '-' if operation == 'sub' else '*' if operation == 'mul' else '/'}{n2} = {result} \n")
 
 print(f"O resultado é: {result}")
