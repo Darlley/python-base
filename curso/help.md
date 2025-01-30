@@ -84,7 +84,31 @@ env | grep
 # File descriptor
 - open(filepath) abre o arquivo
   $ arquivo = open(filepath, "r")
-  $ arquivo.read()                    # ou open(filepath).read()
-  $ arquivo = open(filepath, "w" ou "a")     # "w" substitui , "a" faz append do que exisite
-  $ arquivo.write("texto")            # ou open(filepath).write("texto")
-  
+  $ arquivo.read()                            # ou open(filepath).read()
+  $ arquivo = open(filepath, "w" ou "a")      # "w" substitui , "a" faz append do que exisite
+  $ arquivo.write("texto")                   # ou open(filepath).write("texto")
+  $
+  $ # o problema disso é ter que fechar com arquivo.close()
+  $ # A forma certa é abrir um contexto com with
+  $ with open(filepath, "a") as arquivo:
+  $   arquivo.read()
+  $
+  $ # forma mais pratica de escrever e ler um arquivo:
+  $ print("Brasil", file=open(filepath, "a")) # o print ja adiciona \n no final
+  $
+  # Textos com multiplas linhas em array
+  $ with open(filepath, "a") as arquivo:
+  $   arquivo.writelines(["texto1","texto2"])
+  $   arquivo.readlines(["texto1","texto2"])
+# pathib
+- from pathib import Path
+- Path("pasta")                               # retorna um objeto PosixPath
+  $ path = Path("pasta") / Path("subpasta")   # concatenação explicita
+  $ filepath = path / "arquivo.txt"           # concatenação implicita
+  $
+  $ # criação de pastas
+  $ (path / "outrapasta").mkdir()
+  $
+  $ # I/O
+  $ filepath.write_text("Hello")
+  $ filepath.read_text()
