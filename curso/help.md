@@ -62,7 +62,7 @@ type(sys.stdou) = IO
 env | grep 
 
 
-## DIRETORIOS E ARQUIVOS (20min)
+## DIRETORIOS E ARQUIVOS (45:40min)
 
 - import os
 - os.listdir(".") lsita em um array os arquivos do diretorio atual
