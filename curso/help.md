@@ -60,3 +60,31 @@ type(sys.stdou) = IO
   - python hello.py --lang="PT_BR"            retorna ['hello.py', '--lang=PT_BR']
 
 env | grep 
+
+
+## DIRETORIOS E ARQUIVOS (20min)
+
+- import os
+- os.listdir(".") lsita em um array os arquivos do diretorio atual
+  - os.listdir(".")[-1] ultimo arquivo
+  - não use "." por in compatibilidade entre SO
+    $ path = os.curdir  (current director)
+    $ os.listdir(path)
+- os.mkdir("nome da pasta") ou os.mkdir("pasta"/"subpasta") cria uma pasta ou diretorio
+  - os.makedirs("nome da pasta", exist_ok=True) ignore a criação se ja existir
+  - não use os.mkdir("pasta"/"subpasta") por diferenças entre SO da "/"
+    $ path = os.path.join("pasta", "subpasta")
+    $ os.makedirs(path, exist_ok=True)
+- os.listdir("nome da pasta") lista arquivos e diretorios dentro de uma pasta
+- Criação de conteúdo:
+  $ filepath = os.path.join(path, "arquivo.txt")
+  $ os.path.exists(filepath) # True
+  $ os.path.basename(filepath) # 'arquivo.txt'
+  $ os.path.abspath(filepath) # 'C:/home/usr/.../arquivo.txt'
+# File descriptor
+- open(filepath) abre o arquivo
+  $ arquivo = open(filepath, "r")
+  $ arquivo.read()                    # ou open(filepath).read()
+  $ arquivo = open(filepath, "w" ou "a")     # "w" substitui , "a" faz append do que exisite
+  $ arquivo.write("texto")            # ou open(filepath).write("texto")
+  
