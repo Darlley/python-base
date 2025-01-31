@@ -1,0 +1,3 @@
+Naruto,naruto@example.com
+Goku,goku@example.com
+Saitama,saitama@example.com

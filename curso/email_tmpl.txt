@@ -1,0 +1,11 @@
+Olá, {nome} 🍉
+
+Tem interesse em comprar {produto}?
+
+Este produto é ótimo para resolver {problema}
+
+Clique agora em {link}
+
+Apenas {quantidade:03d} disponíveis!
+
+Preço promocional {promocao:.2f}
