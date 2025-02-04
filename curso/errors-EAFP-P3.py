@@ -30,6 +30,7 @@ try:
 except FileNotFoundError as e:
   print(f"[Error] {str(e)}.")
   sys.exit(1)
+  # TODO: Usar p retry
 else:
   print("Não aconteceu nenhum erro")
 finally:

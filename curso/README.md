@@ -112,3 +112,6 @@ env | grep
   $ # I/O
   $ filepath.write_text("Hello")
   $ filepath.read_text()
+
+
+- git grap "TODO:" lista os TODO:
