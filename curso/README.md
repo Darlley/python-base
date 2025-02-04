@@ -113,5 +113,5 @@ env | grep
   $ filepath.write_text("Hello")
   $ filepath.read_text()
 
-
+57:31min
 - git grap "TODO:" lista os TODO:
