@@ -112,6 +112,15 @@ env | grep
   $ # I/O
   $ filepath.write_text("Hello")
   $ filepath.read_text()
-
-57:31min
+#
 - git grap "TODO:" lista os TODO:
+- os dicionários possuem o método get, lee vai procurar o valor na chave do primeiro parametro, senão vai retornar um valor padrão o segundo parametro:
+  ```py
+  # current_language = ""
+  msg = dict({
+    "en_US": "Hello, World!",
+    "pt_BR": "Olá, mundo!"
+  })
+  msg.get(current_language, msg["pt_BR"]) # "Olá, mundo!"
+  ```
+  Um problema com esta abordagem é que o usuário não é informado que a escolha dele foi errada e não consta no dicionario por exemplo. O try/Except seria uma opção melhor.

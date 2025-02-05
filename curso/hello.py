@@ -60,4 +60,17 @@ msg = dict({
   "pt_BR": "Olá, mundo!"
 })
 
-print(f"{arguments["count"]}x: {msg[current_language] * int(arguments["count"])}")
+
+"""
+try:
+  message = msg[current_language]
+  print(f"{arguments["count"]}x: {message * int(arguments["count"])}")
+except KeyError as e:
+  print(f"[ERROR] {str(e)}")
+  print(f"Language is invalid, chose {list(msg.keys())}")
+  sys.exit(1)
+"""
+
+message = msg.get(current_language, msg["pt_BR"])
+
+print(f"{arguments["count"]}x: {message * int(arguments["count"])}")
